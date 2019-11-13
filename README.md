@@ -1,3 +1,16 @@
+# Installation
+
+## Server
+* in server folder run npm install
+* in same folder run npm run serve
+
+## FrontEnd
+* main folder run npm install
+* in same folder run npm run start
+* Go to http://localhost:8080/
+
+# Task
+
 # Onboarding Post-it App
 Create post-it sticker app following this description. Read all instructions first, then start with explaining your workflow to your onboarding developer.
 
