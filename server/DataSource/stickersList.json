@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "label": "first sticker",
+    "description": "Dont forget to buy milk",
+    "finished": true,
+    "isEditing": false,
+    "coords": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  {
+    "id": 2,
+    "label": "second sticker second sticker second sticker second sticker ",
+    "description": "second sticker second sticker second sticker second sticker second sticker second sticker second sticker second sticker second sticker second sticker second sticker second sticker second sticker second sticker second sticker second sticker ",
+    "finished": false,
+    "isEditing": false,
+    "coords": {
+      "x": 230,
+      "y": 0
+    },
+    "comments": [
+      {
+        "id": 113,
+        "name": "Franta",
+        "text": "Where is my milk?"
+      },
+      {
+        "id": 114,
+        "name": "Jiřina",
+        "text": "You forgot milk again, be careful!"
+      },
+      {
+        "id": 115,
+        "name": "Franta",
+        "text": "Sorry!"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "label": "buy some food",
+    "description": "Reserve table in restaurant",
+    "finished": false,
+    "isEditing": false,
+    "coords": {
+      "x": 450,
+      "y": 150
+    },
+    "comments": [
+      {
+        "id": 123,
+        "name": "Jeff",
+        "text": "Hi how are you?"
+      },
+      {
+        "id": 124,
+        "name": "Frank",
+        "text": "Not bad at all"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "label": "Send letter to Peter",
+    "description": "Do it till 4pm, coz post is closing soon!",
+    "finished": false,
+    "isEditing": false,
+    "coords": {
+      "x": 15,
+      "y": 190
+    }
+  },
+  {
+    "id": 5,
+    "label": "buy some food 3",
+    "description": "Reserve table in restaurant",
+    "finished": false,
+    "isEditing": false,
+    "coords": {
+      "x": 5,
+      "y": 90
+    }
+  }
+]

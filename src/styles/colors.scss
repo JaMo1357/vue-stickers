@@ -1,0 +1,25 @@
+$primary-color: #fffa20;
+$secondary-color: #000;
+
+$inputs-background: #fff;
+$link-color: $secondary-color;
+
+/*right top corner on hover over sticker*/
+$warning-background: #f35e5e;
+$warning-color: #000;
+
+/*glowing on hover over sticker*/
+
+$finish-sticker-label-background: #fffdfde8;
+
+$sticker-show-add-comments: #0000ff;
+
+$save-background: #00c200ad;
+$cancel-background: #b2b2b2;
+$save-cancel-color: #fff;
+
+$borders-color: darken($primary-color, 15%);
+
+$context-btn-hover: $sticker-show-add-comments;
+
+$add-comment-background: #ff8b18;
