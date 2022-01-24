@@ -1,10 +1,20 @@
 # Onboarding Post-it App
 Create post-it sticker app following this description. Read all instructions first, then start with explaining your workflow to your onboarding developer.
 
-## App will have 2 pages
+## App has 2 pages
 * Menu
-* Dashboard
-* Detail
+* Dashboard with all notes
+
+## Implemented functions
+* Add post on right click for cursor position
+* Add comment to post
+* Mark post as finished
+* Delet post
+
+## Running application
+* server/package.json - start - starts server which servers json file with posts
+* [ROOT] package.json - serve - serves static files
+
 
 ## Menu
 Will only contain single navigation item pointing to dashboard
