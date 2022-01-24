@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard" 
+  <div class="dashboard"
     @contextmenu.prevent.self="showContextMenu($event)"
     @click="hideContextMenu">
 
@@ -18,10 +18,10 @@
 <script>
 
   import Vue from 'vue'
-  import {mapState} from 'vuex'
+  import { mapState } from 'vuex'
   import Sticker from '../components/Sticker'
 
-  import {CREATE_STICKER} from "../stores/StickerStore/constants";
+  import { CREATE_STICKER } from '@/stores/StickerStore/constants';
 
   Vue.component('Sticker', Sticker);
 
@@ -33,9 +33,9 @@
           show: false,
           coords: {
             x: 0, y: 0
-          }
-        }
-      }
+          },
+        },
+      };
     },
     computed: {
       ...mapState(['stickers'])
@@ -88,7 +88,7 @@
         border-radius: 3px;
         transition: 2s;
         &:hover{
-          color: $context-btn-hover;      
+          color: $context-btn-hover;
         }
       }
     }

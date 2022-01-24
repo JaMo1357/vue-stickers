@@ -22,17 +22,20 @@ export default {
   [ADD_COMMENT](state, data) {
     let allCommentIDs = state.stickers[data.stickerID].comments;
     let nextCommentID = (typeof allCommentIDs !== "undefined")? Math.max(...allCommentIDs) + 1 : 0;
+
     let newComment = {
       "id"  : nextCommentID,
       "name": data.commentData.name,
       "text": data.commentData.text,
     };
+
     Vue.set(state.comments, nextCommentID, newComment);
     let hasComments = state.stickers[data.stickerID].comments !== undefined;
-    if(hasComments){
+
+    if (hasComments) {
       var index = state.stickers[data.stickerID].comments.length;
       Vue.set(state.stickers[data.stickerID].comments, index, nextCommentID);
-    }else{
+    } else {
       Vue.set(state.stickers[data.stickerID], 'comments', [nextCommentID]);
     }
   },
@@ -52,8 +55,8 @@ export default {
     let nextStickerID = this.getters[GET_NEW_STICKER_ID];
     let newStickerData = {
       id: nextStickerID,
-      label: "",
-      description: "",
+      label: '',
+      description: '',
       coords: coords,
       isEditing: true
     };

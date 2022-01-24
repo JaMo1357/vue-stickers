@@ -8,7 +8,7 @@
 
     <div class="sticker__inner-wrapper">
 
-      <div class="sticker__empty-overlay" 
+      <div class="sticker__empty-overlay"
           v-show="isEmptySticker && !sticker.isEditing"
           title="Double-tap to add some text in it ...">
         <div class="sticker__empty-overlay--red-text">Empty !</div>
@@ -18,7 +18,7 @@
         :style="[sticker.isEditing ? {position: 'relative'} : '']"
         :class="{'pinned': sticker.isEditing === true}" >
 
-        <div class="checkbox-wrapper" 
+        <div class="checkbox-wrapper"
               @click="finishSticker()"
               v-show="!isEmptySticker">
           <label class="checkbox-wrapper__finish-sticker"
@@ -86,14 +86,13 @@
 </template>
 
 <script>
-
   import {
-    FINISH_STICKER, 
+    FINISH_STICKER,
     REMOVE_STICKER,
     UPDATE_STICKER,
-  } from "../stores/StickerStore/constants";
+  } from '@/stores/StickerStore/constants';
 
-  import StickerComments from "../components/StickerComments";
+  import StickerComments from '../components/StickerComments';
 
   import Vue from 'vue';
 
@@ -103,7 +102,7 @@
     components: {StickerComments},
     data() {
       return {
-        dragging: false,
+        //dragging: false,
         overlap: {
           x: 0, y: 0
         },
@@ -125,12 +124,12 @@
       }
     },
     computed: {
-      randomTiltDegree : function(){
+      randomTiltDegree() {
         let num = Math.floor(Math.random()*3) + 1; // this will get a number between 1 and 99;
         num *= Math.floor(Math.random()*2) === 1 ? 1 : -1; // this will add minus sign in 50% of cases
         return num;
       },
-      isEmptySticker : function(){
+      isEmptySticker() {
         return this.sticker.label === "" && this.sticker.description === "";
       }
     },
@@ -163,7 +162,7 @@
           newLabel: labelVal,
           newDescription: descriptionVal,
         };
-      
+
         this.cancelStickerEditMode();
         this.$store.commit(UPDATE_STICKER, newStickerData);
 
@@ -303,8 +302,7 @@
         display: inline-flex;
         cursor: pointer;
         height: 20px;
-        align-items: start;
-
+        align-items: flex-start;
 
         &__finish-sticker {
           height: 19px;

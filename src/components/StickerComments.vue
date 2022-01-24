@@ -1,11 +1,7 @@
 <template>
-
   <div class="comments">
-
     <div class="comments__nav-wrapper">
-
       <span class="comments__nav-wrapper--link">
-
         <template v-if="commentsIDs.length > 0">
           <span @click="emitExpanded">
             {{ expanded ? hasCommentsText.hide : hasCommentsText.show }}
@@ -16,28 +12,27 @@
             {{ showCommentForm ? 'Hide form ...' : 'Add comment ...' }}
           </span>
         </template>
-
       </span>
-
       <span @click="toggleCommentForm"
-            v-show="commentsIDs.length > 0"
-            title="Add comment"
-            class="comments__nav-wrapper--add-comment">
-            {{ showCommentForm ? '-' : '+' }}
+        v-show="commentsIDs.length > 0"
+        title="Add comment"
+        class="comments__nav-wrapper--add-comment">
+        {{ showCommentForm ? '-' : '+' }}
       </span>
-
     </div>
 
     <transition name="expandForm">
       <CommentForm v-show="showCommentForm"
-                    @toggleCommentForm="toggleCommentForm"
-                    :isEditing="isEditing"
-                    :stickerID="stickerID"/>
+        @toggleCommentForm="toggleCommentForm"
+        :isEditing="isEditing"
+        :stickerID="stickerID"
+      />
     </transition>
-
     <transition name="expand">
       <div class="comments__wrapper" v-show="expanded">
-        <Comment v-for="(commentsID, i) in commentsIDs" :key="i" :comment="$store.state.comments[commentsID]" />
+        <Comment v-for="(commentsID, i) in commentsIDs"
+           :key="i" :comment="$store.state.comments[commentsID]"
+        />
       </div>
     </transition>
 
@@ -45,16 +40,18 @@
 </template>
 
 <script>
-
-  import Comment from "../components/Comment";
-  import CommentForm from "./CommentForm";
+  import Comment from '../components/Comment';
+  import CommentForm from './CommentForm';
   import Vue from 'vue';
 
   Vue.component('Comment', Comment);
   Vue.component('CommentForm', CommentForm);
 
   export default {
-    components: {Comment, CommentForm},
+    components: {
+      Comment,
+      CommentForm,
+    },
     name: 'StickerComments',
     data() {
       return {
@@ -62,9 +59,9 @@
         showEditedForm: false,
         hasCommentsText:{
           show: 'Show comments',
-          hide: 'Hide comments'
-        }
-      }
+          hide: 'Hide comments',
+        },
+      };
     },
     props: {
       stickerID:{
@@ -83,11 +80,8 @@
       commentsIDs:{
         type: Array,
         required: false,
-        default: function () { return [] }
+        default: () => [],
       }
-    },
-    computed: {
-
     },
     methods: {
       toggleCommentForm(){
@@ -162,5 +156,4 @@
       flex-direction: column;
     }
   }
-
 </style>

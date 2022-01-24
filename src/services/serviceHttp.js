@@ -1,6 +1,6 @@
 
-import axios from "axios";
-import {normalize, schema} from "normalizr";
+import axios from 'axios';
+import { normalize, schema } from 'normalizr';
 
 
 export function fetchStickersData() {

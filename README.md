@@ -1,16 +1,3 @@
-# Installation
-
-## Server
-* in server folder run npm install
-* in same folder run npm run serve
-
-## FrontEnd
-* main folder run npm install
-* in same folder run npm run start
-* Go to http://localhost:8080/
-
-# Task
-
 # Onboarding Post-it App
 Create post-it sticker app following this description. Read all instructions first, then start with explaining your workflow to your onboarding developer.
 
@@ -51,7 +38,7 @@ Use your own nodeJS server for serving initial data into the app
 - [x] Vuex - state of the application
 - [x] Use at least 1 functional component where it makes sense
 - [x] Vuejs router
-- [ ] Use Flexbox layout styling
+- [x] Use Flexbox layout styling
 - [x] BEM naming convention
 - [ ] Write tests for store getters, mutations, actions
 

@@ -3,13 +3,13 @@ import {
 } from './constants';
 
 export default {
-  [GET_NEW_STICKER_ID](state) {
-    if(typeof state.stickers !== "undefined"){
-      let stickersIDs = Object.keys(state.stickers).map(indexValue => {
+  [GET_NEW_STICKER_ID]({ stickers }) {
+    if (typeof stickers !== "undefined") {
+      let stickersIDs = Object.keys(stickers).map(indexValue => {
         return indexValue;
       });
       return Math.max(...stickersIDs) + 1;
-    }else{
+    } else {
       return 0;
     }
   },

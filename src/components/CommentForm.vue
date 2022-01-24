@@ -1,27 +1,23 @@
 <template>
-
-  <div class="add-comment" :class="{'shrinked-layout' : !isEditing}">
-    
+  <div class="add-comment" :class="{ 'shrinked-layout' : !isEditing }">
     <input type="text"
            ref="commentName"
            class="comment-name"
-           :class="{'error': errors.nameError}"
+           :class="{ 'error': errors.nameError }"
            placeholder="Type your name...">
-
     <input type="text"
            ref="commentText"
            class="comment-message"
-           :class="{'error': errors.textError}"
+           :class="{ 'error': errors.textError }"
            placeholder="Type your message...">
-
-    <button @click="submitComment">{{ isEditing ? 'Add comment' : 'Add' }}</button>
-
+    <button @click="submitComment">{{
+        isEditing ? 'Add comment' : 'Add'
+      }}</button>
   </div>
 </template>
 
 <script>
-
-  import {ADD_COMMENT} from "../stores/StickerStore/constants";
+import { ADD_COMMENT } from '@/stores/StickerStore/constants';
 
   export default {
     name: 'CommentForm',
@@ -43,29 +39,37 @@
         required: true
       }
     },
-    computed: {},
     methods: {
-      submitComment: function(){
+      async submitComment() {
         let name = this.$refs.commentName.value;
         let text = this.$refs.commentText.value;
-        this.errors.nameError = this.$refs.commentName.value === "";
-        this.errors.textError = this.$refs.commentText.value === "";
+        this.errors.nameError = this.$refs.commentName.value === '';
+        this.errors.textError = this.$refs.commentText.value === '';
 
-        if(this.errors.textError || this.errors.nameError){
+        if(this.errors.textError || this.errors.nameError) {
           return false
         }
 
         this.errors.nameError = false;
         this.errors.textError = false;
-        let commentData = {  "name": name, "text": text };
+
+        let commentData = { 'name': name, 'text': text };
+
         this.closeForm();
-        this.$store.commit(ADD_COMMENT, {stickerID: this.stickerID, commentData});
+
+        await this.$store.dispatch(ADD_COMMENT, {
+          stickerID: this.stickerID,
+          commentData,
+        }).then(() => {
+          console.log('Comment saved!');
+          this.$refs.commentName.value = '';
+          this.$refs.commentText.value = '';
+        });
       },
       closeForm() {
         this.$emit('toggleCommentForm');
       },
     },
-    mounted() {},
   }
 </script>
 

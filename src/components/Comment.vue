@@ -1,37 +1,26 @@
-<template>
+<template functional>
   <div class="comment">
-    <div class="comment__name">{{ comment.name }} :</div>
-    <div class="comment__text">{{ comment.text }}</div>
+    <div class="comment__name">{{ props.comment.name }} :</div>
+    <div class="comment__text">{{ props.comment.text }}</div>
   </div>
 </template>
 
 <script>
-
   export default {
     name: 'StickerComments',
-    data() {
-      return {
-
-      }
-    },
     props: {
       comment: {
         type: Object,
-        required: true
+        required: true,
       }
-    },
-    computed: {},
-    methods: {
-
     },
   }
 </script>
 
 <style lang="scss">
+  @import './../styles/colors';
 
-  @import "./../styles/colors";
-
-  .comment{
+  .comment {
     display: flex;
     justify-content: left;
     flex-flow: column;
@@ -39,12 +28,9 @@
     &:nth-child(2n+0) {
       background: lighten($primary-color, 15%);
     }
-    &__name{
+    &__name {
       font-weight: bold;
       font-size: 12px;
-    }
-    &__text{
-
     }
   }
 
