@@ -2,7 +2,7 @@
 Create post-it sticker app following this description. Read all instructions first, then start with explaining your workflow to your onboarding developer.
 
 ## App has 2 pages
-* Menu
+* About
 * Dashboard with all notes
 
 ## Implemented functions
