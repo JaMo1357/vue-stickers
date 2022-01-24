@@ -1,14 +1,19 @@
 var chai = require('chai')
   , chaiHttp = require('chai-http');
+var expect = chai.expect;
 
 chai.use(chaiHttp);
 
-it('Successfully receives data', function(done) {
-chai.request('http://localhost:3000')
-  .put('/stickers')
-  .end(function (err, res) {
-    expect(err).to.be.null;
-    expect(res).to.have.status(200);
-    done();
+
+describe('From local server', function() {
+  it('Successfully retreives data', (done) => {
+  chai.request('http://localhost:3000')
+    .put('/stickers')
+    .set('content-type', 'application/json')
+    .end(function (err, res) {
+      expect(err).to.be.null;
+      expect(res).to.have.status(200);
+      done();
+    });
   });
 });
